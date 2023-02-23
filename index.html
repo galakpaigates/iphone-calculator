@@ -9,52 +9,74 @@
 </head>
 <body>
     <div class="container">
-        <div class="header">
-            100
-        </div>
-
-        <div class="buttons-wrapper">
-            <div class="button-one">
-                <button class="first-three">AC</button>
-                <button id="plusMinus" class="first-three">+/-</button>
-                <button id="percent" class="first-three">%</button>
-                <button id="operators">/</button>
+        <form action="" name="calculator" id="onlyForm">
+            <div class="displayContainer">
+                <textarea class="header" type="tel" id="display" style="max-width: 210px; max-height: 100px;" disabled></textarea>
             </div>
 
-            <div class="button-two">
-                <button value="7" id="numbers">7</button>
-                <button value="8" id="numbers">8</button>
-                <button value="9" id="numbers">9</button>
-                <button value="*" id="operators" style="margin-top: 10px;">X</button>
-            </div>
+            <div class="buttons-wrapper">
+                <div class="button-one">
+                    <input type="button" value="AC" class="first-three" onclick="calculator.display.value = ''">
+                    <input type="button" id="plusMinus"  value="+/-" class="first-three">
+                    <input type="button" id="percent" value="%" class="first-three" onclick="calculator.display.value += '%'">
+                    <input type="button" type="button" value="&#247;" id="operators" onclick="calculator.display.value += '/'">
+                </div>
 
-            <div class="button-three">
-                <button value="4" id="numbers">4</button>
-                <button value="5" id="numbers">5</button>
-                <button value="6" id="numbers">6</button>
-                <button value="-" id="operators" style="margin-top: 10px;">-</button>
-            </div>
+                <div class="button-two">
+                    <input type="button" value="7" id="numbers" onclick="calculator.display.value += '7'">
+                    <input type="button" value="8" id="numbers" onclick="calculator.display.value += '8'">
+                    <input type="button" value="9" id="numbers" onclick="calculator.display.value += '9'">
+                    <input type="button" value="&times;" id="operators" style="margin-top: 10px;" onclick="calculator.display.value += '*'">
+                </div>
 
-            <div class="button-four">
-                <button value="1" id="numbers">1</button>
-                <button vlaue="2" id="numbers">2</button>
-                <button value="3" id="numbers">3</button>
-                <button vlaue="+" id="operators" style="margin-top: 10px;">+</button>
-            </div>
+                <div class="button-three">
+                    <input type="button" value="4" id="numbers" onclick="calculator.display.value += '4'">
+                    <input type="button" value="5" id="numbers" onclick="calculator.display.value += '5'">
+                    <input type="button" value="6" id="numbers" onclick="calculator.display.value += '6'">
+                    <input type="button" value="-" id="operators" style="margin-top: 10px;" onclick="calculator.display.value += '-'">
+                </div>
 
-            <div class="button-five">
-                <button value="0" id="zero">0</button>
-                <button value="." class="dot">.</button>
-                <button value="=" id="operators" style="margin-top: 10px;">=</button>
-            </div>
+                <div class="button-four">
+                    <input type="button" value="1" id="numbers" onclick="calculator.display.value += '1'">
+                    <input type="button" value="2" id="numbers" onclick="calculator.display.value += '2'">
+                    <input type="button" value="3" id="numbers" onclick="calculator.display.value += '3'">
+                    <input type="button" value="+" id="operators" style="margin-top: 10px;" onclick="calculator.display.value += '+'">
+                </div>
 
-            <div>
-                <button class="switch-theme">Switch Theme</button>
+                <div class="button-five">
+                    <input type="button" value="0" id="zero" onclick="calculator.display.value += '0'">
+                    <input type="button" value="." class="dot" onclick="calculator.display.value += '.'">
+                    <input type="submit" value="=" id="operators" style="margin-top: 10px;" onclick="calculator.display.value = eval(calculator.display.value)">
+                </div>
+
+                <div>
+                    <button type="button" class="switch-theme">Switch Theme</button>
+                </div>
             </div>
-        </div>
+        </form>
     </div>
 
     <script>
+        const form = document.getElementById('onlyForm');
+            form.addEventListener('submit', function(event) {
+                event.preventDefault();
+            });
+
+        const displayArea = document.getElementById('display');
+            displayArea.addEventListener('keydown', function(event) {
+                if (event.keyCode === 13) {
+                    event.preventDefault();
+                    event.target.form.submit();
+                }
+            });
+        
+            document.addEventListener('keydown', function(event) {
+                if (event.keyCode === 13) {
+                    console.log('Enter key was pressed');
+                }
+            });
+
+
         document.addEventListener("DOMContentLoaded", function() {
             document.querySelector('.switch-theme').onclick = function changeColors() {
                 if (document.querySelector('.container').style.backgroundColor == "black") {
@@ -67,12 +89,12 @@
 
                 var bodyColor = document.body;
 
-                if (bodyColor.style.backgroundColor == "white") {
+                if (bodyColor.style.backgroundColor == "sandybrown") {
                     bodyColor.style.backgroundColor = "tan"
                 }
 
                 else {
-                    bodyColor.style.backgroundColor = "white"
+                    bodyColor.style.backgroundColor = "sandybrown"
                 };
 
                 if (document.querySelector('.switch-theme').style.backgroundColor == "wheat") {
@@ -81,7 +103,7 @@
 
                 else {
                     document.querySelector('.switch-theme').style.backgroundColor = "wheat"
-                }
+                };
 
                 if (document.querySelector('.first-three').style.backgroundColor == "wheat") {
                     document.querySelector('.first-three').style.backgroundColor = "tan"
@@ -89,7 +111,7 @@
 
                 else {
                     document.querySelector('.first-three').style.backgroundColor = "wheat"
-                }
+                };
 
                 if (document.querySelector('#plusMinus').style.backgroundColor == "wheat") {
                     document.querySelector('#plusMinus').style.backgroundColor = "tan"
@@ -97,7 +119,7 @@
 
                 else {
                     document.querySelector('#plusMinus').style.backgroundColor = "wheat"
-                }
+                };
 
                 if (document.querySelector('#percent').style.backgroundColor == "wheat") {
                     document.querySelector('#percent').style.backgroundColor = "tan"
@@ -105,7 +127,15 @@
 
                 else {
                     document.querySelector('#percent').style.backgroundColor = "wheat"
+                };
+
+                if (document.querySelector('.header').style.backgroundColor == "black") {
+                    document.querySelector('.header').style.backgroundColor = "tan"
                 }
+
+                else {
+                    document.querySelector('.header').style.backgroundColor = "black"
+                };
 
                 if (document.querySelector('.header').style.color == "white") {
                     document.querySelector('.header').style.color = "black"
@@ -113,6 +143,14 @@
 
                 else {
                     document.querySelector('.header').style.color = "white"
+                };
+
+                if (document.querySelector('.header').style.boxShadow == "none") {
+                    document.querySelector('.header').style.boxShadow = "0px 0px 15px gray"
+                }
+
+                else {
+                    document.querySelector('.header').style.boxShadow = "none"
                 }
             };
         });
