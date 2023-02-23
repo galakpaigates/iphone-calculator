@@ -11,7 +11,11 @@
     <div class="container">
         <form action="" name="calculator" id="onlyForm">
             <div class="displayContainer">
-                <textarea class="header" type="tel" id="display" style="max-width: 210px; max-height: 100px;" disabled></textarea>
+                <textarea class="header" type="tel" id="display" style="max-width: 210px; max-height: 70px;" disabled></textarea>
+            </div>
+
+            <div class="backspaceHolderDiv" onclick="calculator.display.value = display.value.toString().slice(0,-1)">
+                <img src="./backspace.png" alt="Delete">
             </div>
 
             <div class="buttons-wrapper">
@@ -151,6 +155,14 @@
 
                 else {
                     document.querySelector('.header').style.boxShadow = "none"
+                }
+
+                if (document.querySelector('.backspaceHolderDiv').style.backgroundColor == "wheat") {
+                    document.querySelector('.backspaceHolderDiv').style.backgroundColor = "tan"
+                }
+
+                else {
+                    document.querySelector('.backspaceHolderDiv').style.backgroundColor = "wheat"
                 }
             };
         });

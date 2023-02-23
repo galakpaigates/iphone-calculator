@@ -10,11 +10,15 @@ body {
     background-color:sandybrown;
 }
 
+input:active {
+    opacity: 0.7;
+}
+
 .container{
     text-align: center;
     margin: 7% auto 50px auto;
     align-items: center;
-    height: 470px;
+    height: 490px;
     width: 270px;
     border-radius: 21px;
     background-color: black;
@@ -30,8 +34,7 @@ body {
 .header{
     background-color: none;
     padding: 32px 21px 10px;
-    margin: 0px 0px 12px 9px;
-    width: 210px;
+    margin: 0px 0px 15px 9px;
     border-radius: 18px;
     background-color: black;
     font-size: xx-large;
@@ -39,10 +42,30 @@ body {
     text-align: right;
     font-weight: 1000;
     border: none;
-    height: 100px;
     box-shadow: none;
     cursor: none;
     outline: none;
+}
+
+.backspaceHolderDiv img{
+    float: right;
+    display: inline;
+    margin: 11.5px 11.5px 0px 0px;
+    width: 30px;
+    height: 25px;
+    color: white;
+}
+
+.backspaceHolderDiv {
+    width: 50px;
+    height: 50px;
+    margin-left: 200px;
+    border-radius: 50%;
+    background-color: wheat;
+    box-shadow: 0px 0px 5px gray;
+    justify-content: center;
+    margin-bottom: 10px;
+    cursor: pointer;
 }
 
 input {
