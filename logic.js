@@ -2,23 +2,6 @@ const form = document.getElementById('onlyForm');
 form.addEventListener('submit', function(event) {
     event.preventDefault();
 });
-        
-//NOTE: This code isnt necessary because you add the "disabled" attribute to the <textarea> element in HTML. 
-//      - adding the disabled attribute to a <textarea> element in HTML will block all events and interactions with it.
-// const displayArea = document.getElementById('display');
-// displayArea.addEventListener('keydown', function(event) {
-//     if (event.keyCode === 13) {
-//         event.preventDefault();
-//         event.target.form.submit();
-//     }
-// });
-        
-document.addEventListener('keydown', function(event) {
-    if (event.keyCode === 13) {
-        console.log('Enter key was pressed');
-    }
-});
-
 
 document.addEventListener("DOMContentLoaded", function() {
     document.querySelector('.switch-theme').onclick = function changeColors() {
