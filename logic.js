@@ -4,28 +4,11 @@ document.addEventListener("DOMContentLoaded", function() {
             event.preventDefault();
         });
 
-        // var inputClicks = document.querySelectorAll("input");
-        // var sound = document.getElementById("click-sound");
+    document.addEventListener('click', function playSound() {
+        let sound = new Audio("./click.mp3");
 
-        // inputClicks.addEventListener("click", function() {
-        //     sound.currentTime = 0;
-        //     sound.play();
-        // });
-
-        // let play = document.querySelector('.first-three');
-        // function playClick() {
-        //     let click = new Audio("button-click.wav");
-        //     audio.play()
-        // }
-
-        // play.addEventListener("click", playClick)
-
-        // function playAudio() {
-        //     var audio = new Audio();
-        //     audio.src = "./button-click.wav"
-        // }
-
-
+        sound.play();
+    });
 
     document.querySelector('.switch-theme').onclick = function changeColors() {
         if (document.querySelector('.container').style.backgroundColor == "black") 
