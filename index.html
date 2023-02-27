@@ -6,12 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./styles.css">
     <title>iPhone Calculator Project - Phenom & Ontoboi</title>
-</head>
+</head> 
 <body>
     <div class="container">
         <form action="" name="calculator" id="onlyForm">
             <div class="displayContainer">
-                <textarea class="header" type="tel" id="display" style="max-width: 210px; max-height: 70px;" disabled></textarea>
+                <textarea class="header" placeholder="0" type="tel" id="display" style="max-width: 210px; max-height: 70px;" autofocus disabled></textarea>
             </div>
 
             <div class="backspaceHolderDiv" onclick="calculator.display.value = display.value.toString().slice(0,-1)">
@@ -21,8 +21,7 @@
             <div class="buttons-wrapper">
                 <div class="button-one">
                     <input type="button" value="AC" class="first-three" onclick="calculator.display.value = ''">
-                    <!-- NOTE: You didnt implement the PlusMinus button -->
-                    <input type="button" id="plusMinus"  value="+/-" class="first-three">
+                    <input type="button" id="plusMinus"  value="+/-" class="first-three" onclick="calculator.display.value = calculator.display.value * -1">
                     <input type="button" id="percent" value="%" class="first-three" onclick="calculator.display.value += '%'">
                     <input type="button" type="button" value="&#247;" id="operators" onclick="calculator.display.value += '/'">
                 </div>
@@ -55,12 +54,12 @@
                 </div>
 
                 <div>
-                    <button type="button" class="switch-theme">Switch Theme</button>
+                    <button type="button" class="switch-theme">Dark Theme</button>
                 </div>
             </div>
         </form>
     </div>
-    
+
     <script src="./logic.js"></script>
 </body>
 </html>

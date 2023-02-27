@@ -1,24 +1,53 @@
-const form = document.getElementById('onlyForm');
-form.addEventListener('submit', function(event) {
-    event.preventDefault();
-});
-
 document.addEventListener("DOMContentLoaded", function() {
+    const form = document.getElementById('onlyForm');
+        form.addEventListener('submit', function(event) {
+            event.preventDefault();
+        });
+
+        // var inputClicks = document.querySelectorAll("input");
+        // var sound = document.getElementById("click-sound");
+
+        // inputClicks.addEventListener("click", function() {
+        //     sound.currentTime = 0;
+        //     sound.play();
+        // });
+
+        // let play = document.querySelector('.first-three');
+        // function playClick() {
+        //     let click = new Audio("button-click.wav");
+        //     audio.play()
+        // }
+
+        // play.addEventListener("click", playClick)
+
+        // function playAudio() {
+        //     var audio = new Audio();
+        //     audio.src = "./button-click.wav"
+        // }
+
+
+
     document.querySelector('.switch-theme').onclick = function changeColors() {
         if (document.querySelector('.container').style.backgroundColor == "black") 
             document.querySelector('.container').style.backgroundColor = "wheat"
         else
             document.querySelector('.container').style.backgroundColor = "black"
 
-        if (document.body.style.backgroundColor == "sandybrown") 
+        if (document.body.style.backgroundColor == "black") 
             document.body.style.backgroundColor = "tan"
         else
-            document.body.style.backgroundColor = "sandybrown"
+            document.body.style.backgroundColor = "black"
 
         if (document.querySelector('.switch-theme').style.backgroundColor == "wheat")
             document.querySelector('.switch-theme').style.backgroundColor = "tan"
         else
             document.querySelector('.switch-theme').style.backgroundColor = "wheat"
+
+        if (document.querySelector('.switch-theme').innerHTML == "Dark Theme")
+            document.querySelector('.switch-theme').innerHTML = "Light Theme"
+
+        else 
+            document.querySelector('.switch-theme').innerHTML = "Dark Theme"
 
         if (document.querySelector('.first-three').style.backgroundColor == "wheat")
             document.querySelector('.first-three').style.backgroundColor = "tan"
@@ -53,6 +82,6 @@ document.addEventListener("DOMContentLoaded", function() {
         if (document.querySelector('.backspaceHolderDiv').style.backgroundColor == "wheat")
             document.querySelector('.backspaceHolderDiv').style.backgroundColor = "tan"
         else
-            document.querySelector('.backspaceHolderDiv').style.backgroundColor = "wheat"
+            document.querySelector('.backspaceHolderDiv').style.backgroundColor = "wheat" 
     };
 });
