@@ -26,11 +26,11 @@ document.addEventListener("DOMContentLoaded", function() {
         else
             document.querySelector('.switch-theme').style.backgroundColor = "wheat"
 
-        if (document.querySelector('.switch-theme').innerHTML == "Light Theme")
-            document.querySelector('.switch-theme').innerHTML = "Dark Theme"
+        if (document.querySelector('.switch-theme').innerHTML == "Dark Theme")
+            document.querySelector('.switch-theme').innerHTML = "Light Theme"
 
         else 
-            document.querySelector('.switch-theme').innerHTML = "Light Theme"
+            document.querySelector('.switch-theme').innerHTML = "Dark Theme"
 
         if (document.querySelector('.first-three').style.backgroundColor == "wheat")
             document.querySelector('.first-three').style.backgroundColor = "tan"
