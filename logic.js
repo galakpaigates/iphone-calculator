@@ -4,10 +4,60 @@ document.addEventListener("DOMContentLoaded", function() {
             event.preventDefault();
         });
 
-    document.addEventListener('click', function playSound() {
-        let sound = new Audio("./click.mp3");
+    let backspace = document.querySelector('.backspaceHolderDiv')
+    
+    backspace.addEventListener('click', function playSound() {
+        let sound = new Audio("./click.mp3")
 
-        sound.play();
+        sound.play()
+    });
+
+    let switchTheme = document.querySelector('.switch-theme')
+    
+    switchTheme.addEventListener('click', function playSound() {
+        let sound = new Audio("./click.mp3")
+
+        sound.play()
+    });
+
+    let buttonOne = document.querySelector('.button-one')
+    
+    buttonOne.addEventListener('click', function playSound() {
+        let sound = new Audio("./click.mp3")
+
+        sound.play()
+    });
+
+    let buttonTwo = document.querySelector('.button-two')
+    
+    buttonTwo.addEventListener('click', function playSound() {
+        let sound = new Audio("./click.mp3")
+
+        sound.play()
+    });
+
+    let buttonThree = document.querySelector('.button-three')
+    
+    buttonThree.addEventListener('click', function playSound() {
+        let sound = new Audio("./click.mp3")
+
+        sound.play()
+    });
+
+    let buttonFour = document.querySelector('.button-four')
+    
+    buttonFour.addEventListener('click', function playSound() {
+        let sound = new Audio("./click.mp3")
+
+        sound.play()
+    });
+
+    let buttonFive = document.querySelector('.button-five')
+    
+    buttonFive.addEventListener('click', function playSound() {
+        let sound = new Audio("./click.mp3")
+
+        sound.play()
     });
 
     document.querySelector('.switch-theme').onclick = function changeColors() {
@@ -26,11 +76,11 @@ document.addEventListener("DOMContentLoaded", function() {
         else
             document.querySelector('.switch-theme').style.backgroundColor = "wheat"
 
-        if (document.querySelector('.switch-theme').innerHTML == "Dark Theme")
-            document.querySelector('.switch-theme').innerHTML = "Light Theme"
+        if (document.querySelector('.switch-theme').innerHTML == "Light Theme")
+            document.querySelector('.switch-theme').innerHTML = "Dark Theme"
 
         else 
-            document.querySelector('.switch-theme').innerHTML = "Dark Theme"
+            document.querySelector('.switch-theme').innerHTML = "Light Theme"
 
         if (document.querySelector('.first-three').style.backgroundColor == "wheat")
             document.querySelector('.first-three').style.backgroundColor = "tan"

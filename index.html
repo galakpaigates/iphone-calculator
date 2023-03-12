@@ -11,10 +11,10 @@
     <div class="container">
         <form action="" name="calculator" id="onlyForm">
             <div class="displayContainer">
-                <textarea class="header" placeholder="0" type="tel" id="display" style="max-width: 210px; max-height: 70px;" autofocus disabled></textarea>
+                <textarea class="header" placeholder="0" type="tel" id="display" disabled></textarea>
             </div>
 
-            <div class="backspaceHolderDiv" onclick="calculator.display.value = display.value.toString().slice(0,-1)">
+            <div class="backspaceHolderDiv" name="soundButton" onclick="calculator.display.value = display.value.toString().slice(0,-1)">
                 <img src="./backspace.png" alt="Delete">
             </div>
 
@@ -27,7 +27,7 @@
                 </div>
 
                 <div class="button-two">
-                    <input type="button" value="7" id="numbers" onclick="calculator.display.value += '7'">
+                    <input type="button" value="7" id="numbers" onclick="calculator.display.value += '7', playSound()">
                     <input type="button" value="8" id="numbers" onclick="calculator.display.value += '8'">
                     <input type="button" value="9" id="numbers" onclick="calculator.display.value += '9'">
                     <input type="button" value="&times;" id="operators" style="margin-top: 10px;" onclick="calculator.display.value += '*'">
