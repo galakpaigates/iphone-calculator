@@ -1,67 +1,16 @@
 document.addEventListener("DOMContentLoaded", function() {
-    const form = document.getElementById('onlyForm');
-        form.addEventListener('submit', function(event) {
-            event.preventDefault();
-        });
+    function playSound() {
+        new Audio("./click.mp3").play()
+    }
 
-    let backspace = document.querySelector('.backspaceHolderDiv')
-    
-    backspace.addEventListener('click', function playSound() {
-        let sound = new Audio("./click.mp3")
-
-        sound.play()
-    });
-
-    let switchTheme = document.querySelector('.switch-theme')
-    
-    switchTheme.addEventListener('click', function playSound() {
-        let sound = new Audio("./click.mp3")
-
-        sound.play()
-    });
-
-    let buttonOne = document.querySelector('.button-one')
-    
-    buttonOne.addEventListener('click', function playSound() {
-        let sound = new Audio("./click.mp3")
-
-        sound.play()
-    });
-
-    let buttonTwo = document.querySelector('.button-two')
-    
-    buttonTwo.addEventListener('click', function playSound() {
-        let sound = new Audio("./click.mp3")
-
-        sound.play()
-    });
-
-    let buttonThree = document.querySelector('.button-three')
-    
-    buttonThree.addEventListener('click', function playSound() {
-        let sound = new Audio("./click.mp3")
-
-        sound.play()
-    });
-
-    let buttonFour = document.querySelector('.button-four')
-    
-    buttonFour.addEventListener('click', function playSound() {
-        let sound = new Audio("./click.mp3")
-
-        sound.play()
-    });
-
-    let buttonFive = document.querySelector('.button-five')
-    
-    buttonFive.addEventListener('click', function playSound() {
-        let sound = new Audio("./click.mp3")
-
-        sound.play()
-    });
+    document.querySelector('.buttons-wrapper').addEventListener('click', function(event) {
+        if (event.target.type === "button") {
+            playSound()
+        }
+    })
 
     document.querySelector('.switch-theme').onclick = function changeColors() {
-        if (document.querySelector('.container').style.backgroundColor == "black") 
+        if (document.querySelector('.container').style.backgroundColor == "black")
             document.querySelector('.container').style.backgroundColor = "wheat"
         else
             document.querySelector('.container').style.backgroundColor = "black"
